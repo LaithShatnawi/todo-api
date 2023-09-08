@@ -1,24 +1,12 @@
 "use strict";
 
-const restModel = (sequelize, DataTypes) =>
-  sequelize.define("restaurant", {
-    name: { type: DataTypes.STRING },
-    img: { type: DataTypes.STRING },
-    description: { type: DataTypes.TEXT },
-    location: { type: DataTypes.STRING },
-    rating: { type: DataTypes.FLOAT },
-    price: { type: DataTypes.STRING },
-    ownerId: { type: DataTypes.INTEGER },
-    long: {
-      type: DataTypes.FLOAT,
-      required: true,
-    },
-    lat: {
-      type: DataTypes.FLOAT,
-      required: true,
-    },
-
-  }, { timestamps: true }
+const taskModel = (sequelize, DataTypes) =>
+  sequelize.define("tasks", {
+    taskText: { type: DataTypes.TEXT },
+    assignee: { type: DataTypes.STRING },
+    difficulty: { type: DataTypes.TEXT },
+    complete: { type: DataTypes.BOOLEAN },
+  }
   );
 
-module.exports = restModel;
+module.exports = taskModel;
