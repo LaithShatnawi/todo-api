@@ -5,6 +5,7 @@ const cors = require("cors");
 const app = express();
 
 const authRouter = require("./auth/routes");
+const listRouter = require("./routes/list-route");
 
 // App Level MW
 app.use(cors());
@@ -12,6 +13,7 @@ app.use(express.json());
 
 // Routes
 app.use(authRouter);
+app.use(listRouter);
 
 
 app.get("/", (req, res) => {
